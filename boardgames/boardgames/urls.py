@@ -5,6 +5,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	url(r'^admin/', include(admin.site.urls)),
+	url(r'^user/', include('user.urls')),
 	url(r'^$', 'main.views.home', name='boardgames_home')
 )
 
