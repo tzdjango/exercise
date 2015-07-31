@@ -11,7 +11,7 @@ GAME_STATUS_CHOICES = (
 )
 
 class GamesManager(models.Manager):
-    def games_for_user(self, user):
+    def get_queryset(self, user):
         """Return a queryset of games that this user participates in"""
         return super(GamesManager, self).get_queryset().filter(
             Q(first_player_id=user.id) | Q(second_player_id=user.id))

@@ -6,7 +6,7 @@ from tictactoe.models import Game
 
 @login_required
 def home(request):
-    my_games = Game.objects.games_for_user(request.user)
+    my_games = Game.objects.get_queryset(request.user)
 
     active_games = my_games.filter(status="A")
     finished_games = my_games.exclude(status="A")
