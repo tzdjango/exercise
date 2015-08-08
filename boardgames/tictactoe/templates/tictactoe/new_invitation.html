@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+New Invitation
+{% endblock %}
+
+{% block content %}
+	<div class="well col-md-6">
+		<p>Please select the user you want to invite to play a game</p>
+		<form action="" method="post">
+			{% csrf_token %}
+			{{ form }}
+			<button type="submit">Send the invitation</button>
+		</form>
+	</div>
+{% endblock content %}
